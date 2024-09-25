@@ -32,6 +32,7 @@ Given a class size of 35, what is the probability Dr. J wins the bet?   Assume 2
 ```{r}
 urn = 1:365
 numStudents = 35
+numBets =25
 saveProb = c()
 for (i in 1:100){
   saveProb[i] = 0
@@ -41,12 +42,16 @@ for (i in 1:100){
     saveProb[i] = 1
   }
 }
-    
-  print(sum(saveProb)/100)
-
+ 
+probWin = sum(saveProb)/100   
+print(paste('prob of win', probWin))
+      
+expectedReturn = probWin*numBets*1 - (1-probWin)*numBets*1
+print(paste('expected win per class', expectedReturn))
 
 ```
-
+probability of win = probWin
+expected return per class isexpectReturn
 
 ## 2
 Suppose class size were 26 students, instead of 35. With the same bet ($1 to $1) What is the probability Dr. J wins the bet now?   Assume 20 of the 26 students take the bet, how much is Dr. J's expected profit/loss now?
