@@ -29,6 +29,25 @@ source(file="BrLw.R")
 ## 1
 Given a class size of 35, what is the probability Dr. J wins the bet?   Assume 25 of the 35 students take the bet, what is Dr. J's expected profit/loss? Draw a histogram of the simulated probabilities.  What is a 95% confidence interval for the estimated probability of a Dr.J win?
 
+```{r}
+urn = 1:365
+numStudents = 35
+saveProb = c()
+for (i in 1:100){
+  saveProb[i] = 0
+  sampleB=sample(urn,size=numStudents,replace=T)
+  repeatB = length(unique(sampleB))
+  if (repeatB < 35) {
+    saveProb[i] = 1
+  }
+}
+    
+  print(sum(saveProb)/100)
+
+
+```
+
+
 ## 2
 Suppose class size were 26 students, instead of 35. With the same bet ($1 to $1) What is the probability Dr. J wins the bet now?   Assume 20 of the 26 students take the bet, how much is Dr. J's expected profit/loss now?
 
