@@ -1,6 +1,6 @@
 ---
 title: "Brownlows Bets"
-author: "Dr. J"
+author: "Tanya Craig"
 output: 
   html_document:
     number_sections: true
